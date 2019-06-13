@@ -73,9 +73,9 @@ Page({
     });
   },
   navigateToOrder: function (e) {
-    // var status = e.currentTarget.dataset.status
-    // wx.navigateTo({
-      // url: '../../order/list/list?status=' + status
-    // });
+    var status = e.currentTarget.dataset.status
+    wx.navigateTo({
+      url: '../../order/list/list?status=' + status
+    });
   },
 })

@@ -19,7 +19,14 @@ Page({
 				title: '请输入区域'
 			});
 			return;
-		}
+    } 
+    if (!this.data.areaSelectedStr.indexOf("黑龙江")== 0) {
+      wx.showToast({
+        icon: 'none',
+        title: '暂只支持黑龙江地区'
+      });
+      return;
+    }
 		if (detail == '') {
 			wx.showToast({
         icon: 'none', 
