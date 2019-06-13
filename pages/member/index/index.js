@@ -1,17 +1,7 @@
 const AV = require('../../../utils/av-weapp.js')
 var app = getApp()
 Page({
-	navigateToAddress: function () {
-		wx.navigateTo({
-			url: '../../address/list/list'
-		});
-	},
-	navigateToOrder: function (e) {
-		var status = e.currentTarget.dataset.status
-		wx.navigateTo({
-			url: '../../order/list/list?status=' + status
-		});
-	},
+	
 	logout: function () {
 		if (AV.User.current()) {
 			AV.User.logOut();
@@ -29,17 +19,21 @@ Page({
 		// 获得当前登录用户
 		const user = AV.User.current();
 		// 调用小程序 API，得到用户信息
-		wx.getUserInfo({
-			success: ({userInfo}) => {
-				// 更新当前用户的信息，昵称头像等
-                user.set(userInfo).save().then(user => {
-			    	// 成功，此时可在控制台中看到更新后的用户信息
-					that.setData({
-						userInfo: userInfo
-					});
-			    }).catch(console.error);
-			}
-		});
+    // this.setData({
+      // userInfo: app.globalData.userInfo
+    // });
+    
+		// wx.getUserInfo({
+		// 	success: ({userInfo}) => {
+		// 		// 更新当前用户的信息，昵称头像等
+    //             user.set(userInfo).save().then(user => {
+		// 	    	// 成功，此时可在控制台中看到更新后的用户信息
+		// 			that.setData({
+		// 				userInfo: userInfo
+		// 			});
+		// 	    }).catch(console.error);
+		// 	}
+		// });
 	},
 	chooseImage: function () {
 		var that = this;
@@ -73,4 +67,15 @@ Page({
 			url: '/pages/member/aboutus/aboutus'
 		});
 	},
+  navigateToAddress: function () {
+    wx.navigateTo({
+      url: '../../address/list/list'
+    });
+  },
+  navigateToOrder: function (e) {
+    // var status = e.currentTarget.dataset.status
+    // wx.navigateTo({
+      // url: '../../order/list/list?status=' + status
+    // });
+  },
 })

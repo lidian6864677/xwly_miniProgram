@@ -10,7 +10,7 @@
 	
 	<view bindtap="showOrders">
 		<image src="../../images/icon_shopping.png" mode="aspectFill" class="blue" />
-		<text>我的订单</text>
+		<text>全部分类</text>
 	</view>
   <view bindtap="navToHotSellingZone" class="special">
 		<image src="../../images/hot.jpeg" mode="aspectFill" class="orange" />

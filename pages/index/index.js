@@ -69,20 +69,16 @@ Page({
 	},
 	
 	showOrders: function () {
-		wx.navigateTo({
-			url: "../order/list/list?status=1"
-		});
+    wx.switchTab({
+      url: "../category/category"
+    });
 	},
   navigateToAddress: function () {
     wx.navigateTo({
       url: '../address/list/list'
     });
   },
-  // navigateToShare: function () {
-  //   wx.navigateTo({
-  //     url: '../address/list/list'
-  //   });
-  // },
+
   navToJinanxiangSellingZone: function () {
     wx.navigateTo({
       url: "../../../../goods/list/list?selectParentId=5cff8e38a673f50068e7fefc"

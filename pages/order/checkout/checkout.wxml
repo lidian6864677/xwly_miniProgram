@@ -12,6 +12,6 @@
 	<text>金额</text>
 	<text class="amount">￥{{amount}}</text>
 </view>
-<button class="submit" bindtap="confirmOrder">提交订单</button>
-
+<!-- <button class="submit" bindtap="confirmOrder">提交询价</button> -->
+<button class="submit" bindtap="confirmOrder">询价热线</button>
 <button class="submit" bindtap="callPhone">订购热线</button>

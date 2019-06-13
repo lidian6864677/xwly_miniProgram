@@ -90,7 +90,7 @@ Page({
   },
   showCartToast: function () {
     wx.showToast({
-      title: '已加入购物车',
+      title: '已加入询价单',
       icon: 'success',
       duration: 1000
     });
@@ -103,8 +103,12 @@ Page({
     })
   },
   showCart: function () {
-    wx.switchTab({
-      url: '../../cart/cart'
-    });
+    // wx.switchTab({
+    //   url: '../../cart/cart'
+    // });
+
+    wx.makePhoneCall({
+      phoneNumber: '0452-6864677',
+    })
   }
 });

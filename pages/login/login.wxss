@@ -1,1 +1,17 @@
-/* pages/login/login.wxss */
+page {
+	display: flex;
+	flex-direction: column;
+}
+
+image {
+	width: 90%; 
+	margin: 60px 20px 60px 20px; 
+}
+.submit {
+  font-size: 14px;
+  background-color: #F03744;
+  width: 80%;
+  color: white;
+  align-content: center;
+  margin-top: 15px;
+}

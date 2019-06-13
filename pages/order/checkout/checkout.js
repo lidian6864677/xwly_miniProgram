@@ -41,50 +41,59 @@ Page({
 		}
 	},
 	confirmOrder: function () {
-    wx.showToast({
-      title: '暂不支持线上购买,可拨打订购热线订购',
-      icon: 'none',
-      duration: 2000
+    wx.makePhoneCall({
+      phoneNumber: '0452-6864677',
     })
+
+    // wx.showToast({
+    //   title: '暂不支持线上购买,可拨打订购热线订购',
+    //   icon: 'none',
+    //   duration: 2000
+    // })
+    // wx.showToast({
+    //   title: '暂不支持线上购买,可拨打订购热线订购',
+    //   icon: 'none',
+    //   duration: 2000
+    // })
     return;
 		// submit order
-		var carts = this.data.carts;
-		var that = this;
-		var user = AV.User.current();
-		var order = new AV.Object('Order');
-		order.set('user', user);
-		order.set('status', 0);
-		order.set('amount', this.data.amount);
-		// set address
-		var address = this.addressObjects[this.data.addressIndex];
-		order.set('address', address);
-		order.save().then(function (saveResult) {
-			if (saveResult) {
-				// OrderGoodsMap数组，批量提交
-				var orderGoodsMapArray = [];
-				// create buys & delete carts
-				for (var i = 0; i < carts.length; i++) {
-					// 创建订单商品中间表OrderGoodsMap
-					var orderGoodsMap = AV.Object('OrderGoodsMap');
-					// 遍历购物车对象
-					// move cart to buy
-					var cart = carts[i];
-					orderGoodsMap.set('order', saveResult);
-					orderGoodsMap.set('goods', cart.get('goods'));
-					orderGoodsMap.set('quantity', cart.get('quantity'));
-					orderGoodsMap.set('user', cart.get('user'));
-					cart.destroy();
-					orderGoodsMapArray.push(orderGoodsMap);
-				}
-				AV.Object.saveAll(orderGoodsMapArray).then(function () {
-	            	// 保存到云端
-	            	wx.navigateTo({
-	               		url: '../../../../../payment/payment?orderId=' + order.get('objectId') + '&totalFee=' + that.data.amount
-	            	});
+		// var carts = this.data.carts;
+		// var that = this;
+		// var user = AV.User.current();
+		// var order = new AV.Object('Order');
+		// order.set('user', user);
+		// order.set('status', 0);
+		// order.set('amount', this.data.amount);
+		// // set address
+		// var address = this.addressObjects[this.data.addressIndex];
+		// order.set('address', address);
+		// order.save().then(function (saveResult) {
+		// 	if (saveResult) {
+		// 		// OrderGoodsMap数组，批量提交
+		// 		var orderGoodsMapArray = [];
+		// 		// create buys & delete carts
+		// 		for (var i = 0; i < carts.length; i++) {
+		// 			// 创建订单商品中间表OrderGoodsMap
+		// 			var orderGoodsMap = AV.Object('OrderGoodsMap');
+		// 			// 遍历购物车对象
+		// 			// move cart to buy
+		// 			var cart = carts[i];
+		// 			orderGoodsMap.set('order', saveResult);
+		// 			orderGoodsMap.set('goods', cart.get('goods'));
+		// 			orderGoodsMap.set('quantity', cart.get('quantity'));
+		// 			orderGoodsMap.set('user', cart.get('user'));
+		// 			cart.destroy();
+		// 			orderGoodsMapArray.push(orderGoodsMap);
+		// 		}
+		// 		AV.Object.saveAll(orderGoodsMapArray).then(function () {
+	  //           	// 保存到云端
+	  //           	wx.navigateTo({
+	  //              		url: '../../../../../payment/payment?orderId=' + order.get('objectId') + '&totalFee=' + that.data.amount
+	  //           	});
 					
-				});
-			}
-		});
+		// 		});
+		// 	}
+		// });
 	},
   callPhone: function(){
     wx.makePhoneCall({
