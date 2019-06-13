@@ -1,0 +1,4 @@
+<view class='payWay'>
+  <button class="payButton" bindtap="wechatPay">微信支付（代开通）</button>
+  <button class="payButton" bindtap="onDeliveryPay">货到付款</button>
+</view>

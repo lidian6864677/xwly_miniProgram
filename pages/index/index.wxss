@@ -1,0 +1,143 @@
+page {
+	background: #eee;
+}
+
+.swiper-image {
+	width: 100%;
+	height: 100%;
+}
+
+/*功能区*/
+.func-area {
+	display: flex;
+	flex-direction: row;
+	margin: 20rpx 0;
+	padding-top: 25rpx;
+	background: white;
+}
+
+.func-area view {
+	width: 25%;
+	text-align: center;
+}
+
+.func-area text{
+	display: block;
+	color: #333;
+	font-size: 26rpx;
+	line-height: 60rpx;
+}
+
+.func-area image {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 20rpx;
+}
+.special image{
+  width: 170rpx;
+	height: 80rpx;
+  border-radius: 5rpx;
+}
+
+
+.orange {
+	background: #f60;
+}
+
+.blue {
+	background: #09f;
+}
+.red {
+	background: rgb(255, 0, 0);
+}
+
+.yellow {
+  width: 180rpx;
+	height: 80rpx;
+	/* background: rgb(255, 230, 0); */
+
+}
+
+/*主商品区*/
+.container-goods {
+	background: white;
+ 
+}
+
+.container-goods .caption {
+	font-size: 28rpx;
+	width: 100%;
+	line-height: 60rpx;
+	text-indent: 20rpx;
+	padding: 20rpx;
+   /* display: flex;
+  justify-content: space-between; */
+}
+
+.main-goods {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  margin: 5px 0px 10px 10px;
+
+	/* border-top: 1px solid #eee; */
+	background: white;
+}
+
+.main-goods .single-goods {
+  width: 47%;
+	display: block;
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-right: 3px solid #eee;
+  border-bottom: 3px solid #eee;
+  /* border: 1px 3px 3px 1px solid #eee; */
+  margin: 4px 5px 4px 0px;
+  border-radius: 15px;
+}
+
+
+.main-goods image {
+	width: 240rpx;
+	height: 240rpx;
+	display: block;
+	margin: 20rpx auto;
+}
+
+.main-goods .title {
+	display: block;
+	width: 90%;
+  color: #666;
+	font-size: 28rpx;
+	margin: 5rpx 6rpx 5rpx 20rpx;
+	height: 35rpx;
+	line-height: 32rpx;
+	overflow: hidden;
+  text-align: center;
+}
+
+.main-goods .summary {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.main-goods .summary text {
+	font-size: 28rpx;
+  color: #666;
+	margin: 10rpx 30rpx;
+  text-align: left;
+}
+
+.main-goods .summary .price {
+	color: red;
+  font-size: 28rpx;
+  text-align: left;
+}
+
+.main-goods .summary .sale {
+  font-size: 24rpx;
+	color: #999;
+  text-align: left;
+}
+

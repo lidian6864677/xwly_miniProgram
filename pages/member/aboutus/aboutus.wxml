@@ -1,0 +1,5 @@
+
+<image src="http://lc-ou5siomn.cn-n1.lcfile.com/47882d0050ecbc37c3ed/%E5%90%8D%E7%89%87-%E6%AD%A3%E9%9D%A2.png" mode="widthFix" />
+<image src="http://lc-ou5siomn.cn-n1.lcfile.com/ae87b755341eb28b9fd1/%E5%90%8D%E7%89%87%E8%83%8C%E9%9D%A2.png" mode="widthFix" />
+<button class="submit" bindtap="callPhone01">订购热线01</button>
+<button class="submit" bindtap="callPhone02">订购热线02</button>

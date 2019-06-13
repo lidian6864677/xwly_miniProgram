@@ -1,0 +1,15 @@
+
+
+.payWay{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.payButton{
+  font-size: 14px;
+  background-color: #F03744;
+  width: 80%;
+  color: white;
+  align-content: center;
+  margin-top: 30px;
+}

@@ -1,0 +1,127 @@
+page {
+  background: #eee;
+}
+
+.order-item {
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.order-item:last-child {
+  margin-bottom: 0;
+}
+
+.order-footer {
+  padding: 3px 0;
+}
+
+.order-footer text {
+  font-size: 13px;
+  margin: 0 15rpx;
+}
+
+.totalPrice {
+  font-size: 14px;
+  color: #444;
+  margin-top: 15rpx;
+  margin-right: 15rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.order-status-detail {
+  font-size: 13px;
+  margin-left: 15rpx;
+  color: orange;
+  text-align: left;
+}
+
+/*每行单元格*/
+
+.carts-item {
+  display: flex;
+  flex-direction: row;
+  height: 80rpx;
+  /*width属性解决标题文字太短而缩略图偏移*/
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  padding: 10rpx 0;
+}
+
+/*左部图片*/
+
+.carts-image {
+  margin-left: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+/*右部描述*/
+
+.carts-text {
+  margin-left: 12rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*右上部分标题*/
+
+.carts-title {
+  font-size: 13px;
+  color: #444;
+  line-height: 38rpx;
+  margin-left: 18rpx;
+}
+
+/*右下部分价格与数量*/
+
+.carts-subtitle {
+  font-size: 11px;
+  color: darkgray;
+  padding: 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*价格*/
+
+.carts-price {
+  color: #999;
+  font-size: 13px;
+  line-height: 22px;
+}
+
+/*隐藏元素*/
+
+.hidden {
+  display: none;
+}
+
+.order-status {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.order-button {
+  font-size: 12px;
+  background-color: white;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 24px;
+  margin-bottom: 15rpx;
+}
+
+.order-button-pay {
+  font-size: 12px;
+  background-color: white;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 24px;
+  margin-bottom: 15rpx;
+  color: orange;
+}

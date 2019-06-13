@@ -1,0 +1,44 @@
+<view class="order-item" wx:for="{{orders}}" wx:key="">
+  <view wx:for="{{mappingData[index]}}" wx:for-item="mapping" wx:key="" class="carts-item" bindtap="showGoods" data-object-id="{{mapping.objectId}}">
+    <view>
+      <!-- 缩略图 -->
+      <image class="carts-image" src="{{mapping.avatar}}" mode="aspectFill" />
+    </view>
+    <view class="carts-text">
+      <!-- 商品标题 -->
+      <text class="carts-title">{{mapping.title}}</text>
+      <view class="carts-subtitle">
+        <!-- 价格 -->
+        <text class="carts-price">单价：￥{{mapping.price}}</text>
+        <text>数量：{{mapping.quantity}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="totalPrice">
+    <!-- 支付 -->
+    <!-- <text class="order-status">支付状态：</text> -->
+    <!-- 订单状态，已下单为0，已付为1，已发货为2，已收货为3 -->
+    <text class="order-status-detail" wx:if="{{item.status == 0}}">未付款</text>
+    <text class="order-status-detail" wx:elif="{{item.status == 1}}">待发货</text>
+    <text class="order-status-detail" wx:elif="{{item.status == 2}}">已发货</text>
+    <text class="order-status-detail" wx:elif="{{item.status == 3}}">已完成</text>
+    <text>总计金额：￥{{item.amount}}</text>
+  </view>
+
+  <view class="order-footer">
+    <!-- <text bindtap="pay" data-object-id="{{item.objectId}}" data-total-fee="{{item.amount}}" class="{{status != 0 ? 'hidden': ''}}">支付状态：{{item.status}}</text> -->
+    <text>{{item.createdAt}}</text>
+  </view>
+  <view class="order-footer">
+    <text>收货地址：{{addressArray[index].detail}}</text>
+  </view>
+  <view class="order-status">
+    <button bindtap="cancleOrder" data-object-id="{{item.objectId}}" class="{{status != 0 ? 'hidden': 'order-button'}}">取消订单</button>
+    <button bindtap="payment" data-object-id="{{item.objectId}}" class="{{status != 0 ? 'hidden': 'order-button-pay'}}">付款</button>
+    <button bindtap="reminder" data-object-id="{{item.objectId}}" class="{{status != 1 ? 'hidden': 'order-button'}}">催单</button>
+    <button bindtap="confirmReceipt" data-object-id="{{item.objectId}}" class="{{status != 2 ? 'hidden': 'order-button'}}">确认收货</button>
+    <button bindtap="repurchase" data-object-id="{{item.objectId}}" class="{{status != 3 ? 'hidden': 'order-button'}}">再次购买</button>
+  </view>
+
+
+</view>

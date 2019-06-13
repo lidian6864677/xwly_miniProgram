@@ -1,0 +1,43 @@
+<swiper indicator-dots="true"
+  autoplay="true" interval="5000" duration="1000" style="height:{{bannerHeight}}px;">
+  <block wx:for="{{banner}}" wx:key="">
+    <swiper-item>
+      <image src="{{item.url}}" mode="aspectFill" class="swiper-image" bindtap="showGoods" data-index="{{index}}" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class="func-area">
+	
+	<view bindtap="showOrders">
+		<image src="../../images/icon_shopping.png" mode="aspectFill" class="blue" />
+		<text>我的订单</text>
+	</view>
+  <view bindtap="navToHotSellingZone" class="special">
+		<image src="../../images/hot.jpeg" mode="aspectFill" class="orange" />
+		<text>热销专区</text>
+	</view>
+  <view bindtap="navToJinanxiangSellingZone" class="special">
+		<image src="../../images/jinanxiang.png" mode="aspectFill" class="yellow"  />
+		<text>冀南香专区</text>
+	</view>
+  <view bindtap="navigateToAddress">
+		<image src="../../images/icon_shopping.png" mode="aspectFill" class="red" />
+		<text>收货地址</text>
+	</view>
+  
+</view>
+<!-- hot goods -->
+<view class="container-goods">
+	<text class="caption">热卖推荐</text>
+	<view class="main-goods">
+		<view class="single-goods" wx:for="{{goods}}" wx:for-item="shopitem" wx:key="{{index}}" bindtap="showDetail" data-index="{{index}}">
+			<image class="avatar" src="{{shopitem.attributes.avatar}}" mode="aspectFill"/>
+			<text class="title">{{shopitem.attributes.title}}</text>
+			<view class="summary">
+				<text class="price">￥{{shopitem.attributes.price}}</text>
+				<!-- <text class="sale">已售99件</text> -->
+        <text class="sale">热销产品</text>
+			</view>
+		</view>
+	</view>
+</view>
