@@ -14,16 +14,16 @@ autoplay="true" interval="5000" duration="1000" style="height:{{galleryHeight}}p
 	<image wx:for="{{goods.attributes.detail}}" src="{{item}}" wx:key="" mode="widthFix"></image>
 </view>
 <view class="footer">
-    <!-- <view class="opt-buttons"> -->
-        <!-- <view class="button-group" bindtap="showCart">
+   <view class="opt-buttons">
+        <view class="button-group" bindtap="showCart">
             <image src="../../../images/icon_cart.png" class="button-image" />
-            <text class="add-cart">询价单</text>
+            <text class="button-text">购物车</text>
         </view>
         <view class="button-group" bindtap="">
-            <contact-button class="add-cart" size="22" /> 
-            <text class="add-cart">联系客服</text>
-        </view> -->
-    <!-- </view> -->
-    <button class="add-cart" bindtap="showCart">电话咨询</button>
-    <button class="add-cart" open-type="contact" session-from="weapp"  show-message-card='ture' >联系客服</button>
+            <contact-button class="contact-button" size="22" /> 
+            <text class="button-text">联系客服</text>
+        </view>
+    </view>
+    <button class="add-cart" bindtap="addCart">加入购物车</button>
+
 </view>

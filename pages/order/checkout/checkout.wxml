@@ -13,5 +13,5 @@
 	<text class="amount">￥{{amount}}</text>
 </view>
 <!-- <button class="submit" bindtap="confirmOrder">提交询价</button> -->
-<button class="submit" bindtap="confirmOrder">询价热线</button>
-<button class="submit" bindtap="callPhone">订购热线</button>
+<button class="submit" bindtap="confirmOrder">微信支付</button>
+<button class="submit" bindtap="callPhone">电话订货</button>

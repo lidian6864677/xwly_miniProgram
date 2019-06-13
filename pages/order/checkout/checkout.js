@@ -41,15 +41,12 @@ Page({
 		}
 	},
 	confirmOrder: function () {
-    wx.makePhoneCall({
-      phoneNumber: '0452-6864677',
-    })
 
-    // wx.showToast({
-    //   title: '暂不支持线上购买,可拨打订购热线订购',
-    //   icon: 'none',
-    //   duration: 2000
-    // })
+    wx.showToast({
+      title: '暂不支持线上购买,可拨打订购热线订购',
+      icon: 'none',
+      duration: 2000
+    })
     // wx.showToast({
     //   title: '暂不支持线上购买,可拨打订购热线订购',
     //   icon: 'none',
@@ -99,8 +96,6 @@ Page({
     wx.makePhoneCall({
       phoneNumber: '0452-6864677',
     })
-
-
   },
 
 	loadAddress: function () {
