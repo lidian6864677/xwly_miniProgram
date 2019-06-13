@@ -5,7 +5,7 @@ page {
 /*user info*/
 .userinfo {
   position: relative;
-  width: 750rpx;
+  width: 100%;
   height: 320rpx;
   /* color: white; */
   display: flex;

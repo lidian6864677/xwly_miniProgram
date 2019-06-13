@@ -1,11 +1,10 @@
 page {
-	display: flex;
-	flex-direction: column;
+	/* display: flex; */
+	/* flex-direction: column; */ 
 }
-
-image {
-	width: 90%; 
-	margin: 60px 20px 60px 20px; 
+.displayView{
+  display:flex;
+  justify-content: center;  
 }
 .submit {
   font-size: 14px;
@@ -13,5 +12,10 @@ image {
   width: 80%;
   color: white;
   align-content: center;
-  margin-top: 15px;
+  margin-top: 250rpx;
+}
+.displayView image {
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 50rpx;
 }

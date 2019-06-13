@@ -1,10 +1,10 @@
 <view class="userinfo">
-<view class="userinfo-avatar">
+  <view class="userinfo-avatar">
     <open-data type="userAvatarUrl"></open-data>
   </view>
     <open-data type="userNickName"></open-data>
 </view>
-<!-- <view class="order-area">
+<view class="order-area">
 	<view bindtap="navigateToOrder" class="order" data-status="0">
 		<image src="../../../images/icon_order.png" />
 		<text>待付款</text>
@@ -21,7 +21,7 @@
 		<image src="../../../images/icon_order.png" />
 		<text>已完成</text>
 	</view>
-</view> -->
+</view>
 
 <!-- <view bindtap="" class="tableviewcell">
 	<image src="../../../images/icon_aboutus.png" />

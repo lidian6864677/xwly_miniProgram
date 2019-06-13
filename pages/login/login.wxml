@@ -1,3 +1,4 @@
-
-<image src="http://lc-ou5siomn.cn-n1.lcfile.com/47882d0050ecbc37c3ed/%E5%90%8D%E7%89%87-%E6%AD%A3%E9%9D%A2.png" mode="widthFix" />
-<button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='submit'>授权登录</button>
+ <view class="displayView">
+  <image src="http://lc-ou5siomn.cn-n1.lcfile.com/61cc9d19ecffe534dc42/%E5%85%B4%E6%97%BA%E7%B2%AE%E6%B2%B9.png"  mode="widthFix" />
+ </view>
+  <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='submit'>立即体验</button>
