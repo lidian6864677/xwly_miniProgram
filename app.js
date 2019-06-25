@@ -1,11 +1,13 @@
 // 初始化AV
-const AV = require('./utils/av-weapp.js');
+const AV = require('./utils/av-weapp-min.js');
 const appId = "Ou5SioMNn3UvKp92NGUjPzcp-gzGzoHsz";
 const appKey = "tLu5iRNoNEaQrisYLc03Ts28";
+
 
 AV.init({
   appId: appId,
   appKey: appKey,
+  serverURLs: 'https://avoscloud.com',
 });
 
 // 授权登录
@@ -30,6 +32,7 @@ App({
     });
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    openId: ""
   },
 })

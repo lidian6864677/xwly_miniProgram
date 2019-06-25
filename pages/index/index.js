@@ -1,62 +1,73 @@
-const AV = require('../../utils/av-weapp.js')
+const AV = require('../../utils/av-weapp-min.js')
 Page({
 	data: {
 		banner: [],
 		goods: [],
+    pageIndex: 0,
 		bannerHeight: Math.ceil(290.0 / 750.0 * getApp().screenWidth)
 	},
 	onLoad: function (options) {
 		this.loadBanner();
 		this.loadMainGoods();
-		this.getInviteCode(options);
+		// this.getInviteCode(options);
 	},
   onPullDownRefresh: function () {
+    this.data.pageSize = 0;
     this.loadBanner();
     this.loadMainGoods();
   },
-	getInviteCode: function (options) {
-		if (options.uid != undefined) {
-			wx.showToast({
-				title: '来自用户:' + options.uid + '的分享',
-				icon: 'success',
-				duration: 2000
-			})
-		}
-	},
+ 
+  onReachBottom: function () {
+    this.data.pageIndex++
+    this.loadMainGoods();
+
+  },
+	// getInviteCode: function (options) {
+	// 	if (options.uid != undefined) {
+	// 		wx.showToast({
+	// 			title: '来自用户:' + options.uid + '的分享',
+	// 			icon: 'success',
+	// 			duration: 2000
+	// 		})
+	// 	}
+	// },
 	loadBanner: function () {
 		var that = this;
 		var query = new AV.Query('Banner');
-		// query.include('image');
 		query.find().then(function (bannerObjects) {
 			var banner = [];
-      // console.log(bannerObjects[0].get('image'))
 			for (var i = 0; i < bannerObjects.length; i++) {  
-				// banner.push(bannerObjects[i].get('image').get('url'));
         banner.push({ "url": bannerObjects[i].get('image').get('url'), "router": bannerObjects[i].get('router')})
 			}
-      // console.log(bannerObjects)
 			that.setData({
 				banner: banner
 			});
 		});
 	},
 	loadMainGoods: function () {
+    var pageSize = 5;  
 		var that = this;
 		var query = new AV.Query('Goods');
 		query.equalTo('isHot', true);
     query.equalTo('isNew', true);
-		query.find().then(function (goodsObjects) {
-      // console.log("goodsObjects:",goodsObjects)
-      // var goodss = []
-      // for (var i = 0, len = goodsObjects.length; i < len; i++) {
-      //   goodss.push({ "avatar": goodsObjects[i].get('avatar'), "price": goodsObjects[i].get('price'), "title": goodsObjects[i].get('title')})
-      // }
-
-      // console.log("avatar:",goodsObjects[0].attributes.avatar)
+    query.limit(pageSize);// 最多返回 10 条结果
+    query.skip(this.data.pageIndex * pageSize);// 
+    query.find().then(function (goods) {
+      wx.stopPullDownRefresh()
+      var originGoods = that.data.goods;
+      // 如果初始有值，就合并；否则就是新数据集本身
+      var newGoods = (originGoods.length > 0 && that.data.pageIndex > 0) ? originGoods.concat(goods) : goods;
+      if (goods.length == 0) {
+        wx.showToast({
+          title: '没有更多数据了',
+          icon: 'none',
+          duration: 1000
+        })
+      }
+      console.log(newGoods);
 			that.setData({
-        goods: goodsObjects
+        goods: newGoods
 			});
-      console.log("goods",goodss)
 		});
 
 	},
@@ -99,7 +110,7 @@ Page({
 		return {
 			title: '兴旺粮油经销处',
 			desc: '一个电商系统',
-			path: '/pages/index/index?uid=4719784'
+      path: "pages/login/login"
 		}
 	},
 	showGoods: function (e) {

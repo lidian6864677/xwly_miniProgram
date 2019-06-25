@@ -1,4 +1,4 @@
-const AV = require('../../../utils/av-weapp.js')
+const AV = require('../../../utils/av-weapp-min.js')
 Page({
   data: {
     orderId: ''
@@ -22,7 +22,7 @@ Page({
     wx.request({
       url: 'https://xwly.leanapp.cn/index.php/WXPay',
       data: {
-        openid: getApp().openid,
+        // openid: getApp().openid,
         body: '兴旺粮油',
         tradeNo: that.data.orderId,
         totalFee: parseFloat(that.data.totalFee) * 100
@@ -55,7 +55,11 @@ Page({
             });
           }
         });
-      }
+      },
+      fail(error){
+        console.log(error)
+
+      },
     });
   },
 

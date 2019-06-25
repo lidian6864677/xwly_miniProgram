@@ -1,4 +1,4 @@
-const AV = require('../../../utils/av-weapp.js')
+const AV = require('../../../utils/av-weapp-min.js')
 var app = getApp()
 Page({
 	

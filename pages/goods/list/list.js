@@ -1,4 +1,4 @@
-const AV = require('../../../utils/av-weapp.js')
+const AV = require('../../../utils/av-weapp-min.js')
 
 // 使用function初始化array，相比var initSubMenuDisplay = [] 既避免的引用复制的，同时方式更灵活，将来可以是多种方式实现，个数也不定的
 function initSubMenuDisplay() {
@@ -80,6 +80,7 @@ Page({
     query.limit(pageSize);// 最多返回 10 条结果
     query.skip(this.data.pageIndex * pageSize);// 跳过 20 条结果
     query.find().then(function (goods) {
+      wx.stopPullDownRefresh()
       // 关闭loading提示框
       wx.hideToast();
       // 让goods结果集迭加

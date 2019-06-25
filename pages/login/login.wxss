@@ -7,9 +7,9 @@ page {
   justify-content: center;  
 }
 .submit {
-  font-size: 14px;
+  font-size: 17px;
   background-color: #F03744;
-  width: 80%;
+  width: 60%;
   color: white;
   align-content: center;
   margin-top: 250rpx;
